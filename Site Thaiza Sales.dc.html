@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Thaiza Sales Advocacia e Consultoria — atuação estratégica em Direito Tributário, Empresarial e do Agronegócio para empresas, empresários e produtores rurais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FFFEF8; }
+  ::selection { background: #FEEAA4; color: #370101; }
+  a { color: #AB701C; }
+  a:hover { color: #370101; }
+  *:focus-visible { outline: 2px solid #AB701C; outline-offset: 3px; }
+</style>
+</helmet>
+
+<div style="background:#FFFEF8;font-family:Jost,'Futura','Century Gothic',sans-serif;color:#4B3B38;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#370101;border-bottom:1px solid rgba(171,112,28,0.45);">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#" onClick="{{ goHome }}" aria-label="Thaiza Sales Advocacia e Consultoria — início" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;">
+        <img src="assets/logo-horizontal.png" alt="Thaiza Sales Advocacia e Consultoria" style="height:34px;width:auto;display:block;">
+      </a>
+      <nav aria-label="Navegação principal" style="display:flex;align-items:center;gap:clamp(18px,2.6vw,38px);">
+        <a href="#" onClick="{{ goHome }}" style="display:none;font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;" style-hover="color:#FEEAA4;border-bottom:1px solid #AB701C;" class="navlink">Início</a>
+        <a href="#" onClick="{{ goEscritorio }}" style="display:none;font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;" style-hover="color:#FEEAA4;border-bottom:1px solid #AB701C;" class="navlink">O Escritório</a>
+        <a href="#" onClick="{{ goAreas }}" style="display:none;font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;" style-hover="color:#FEEAA4;border-bottom:1px solid #AB701C;" class="navlink">Áreas de Atuação</a>
+        <a href="#" onClick="{{ goConteudos }}" style="display:none;font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;" style-hover="color:#FEEAA4;border-bottom:1px solid #AB701C;" class="navlink">Conteúdos</a>
+        <a href="#" onClick="{{ goContato }}" style="display:none;font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;" style-hover="color:#FEEAA4;border-bottom:1px solid #AB701C;" class="navlink">Contato</a>
+        <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" style="font-size:11.5px;letter-spacing:1.7px;text-transform:uppercase;color:#370101;text-decoration:none;padding:13px 22px;background:linear-gradient(100deg,#FEEAA4,#AB701C);transition:filter .3s;white-space:nowrap;" style-hover="filter:brightness(1.09);">Fale Conosco</a>
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:1px solid rgba(239,227,214,0.35);padding:11px 12px;cursor:pointer;" class="burger">
+          <i style="display:block;width:18px;height:1px;background:#EFE3D6;"></i>
+          <i style="display:block;width:18px;height:1px;background:#EFE3D6;"></i>
+          <i style="display:block;width:18px;height:1px;background:#EFE3D6;"></i>
+        </button>
+      </nav>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid rgba(171,112,28,0.35);background:#2C0101;padding:14px clamp(20px,5vw,40px) 30px;display:flex;flex-direction:column;">
+        <a href="#" onClick="{{ goHome }}" style="font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(239,227,214,0.12);">Início</a>
+        <a href="#" onClick="{{ goEscritorio }}" style="font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(239,227,214,0.12);">O Escritório</a>
+        <a href="#" onClick="{{ goAreas }}" style="font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(239,227,214,0.12);">Áreas de Atuação</a>
+        <a href="#" onClick="{{ goConteudos }}" style="font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(239,227,214,0.12);">Conteúdos</a>
+        <a href="#" onClick="{{ goContato }}" style="font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:16px 0;">Contato</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <main style="padding-top:78px;">
+
+  <!-- ═══ HOME ═══ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section data-screen-label="Home — Hero" style="background:#370101;position:relative;overflow:hidden;">
+      <div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px,9vw,132px) clamp(20px,4vw,56px) clamp(56px,7vw,104px); display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: clamp(40px,5vw,72px); align-items: center; position: relative">
+        <div>
+          <p data-reveal="" style="margin:0 0 30px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Advocacia e Consultoria</p>
+          <h1 data-reveal="" style="margin:0 0 28px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(33px,4.4vw,60px);line-height:1.14;color:#FFFEF8;letter-spacing:0.5px;text-wrap:pretty;">Estratégia jurídica para decisões que movem negócios e patrimônios.</h1>
+          <div data-reveal="" style="width:82px;height:1px;background:linear-gradient(90deg,#FEEAA4,rgba(171,112,28,0));margin:0 0 28px;"></div>
+          <p data-reveal="" style="margin:0 0 44px;font-size:clamp(15px,1.25vw,18px);line-height:1.75;font-weight:300;color:#E3D3C6;max-width:48ch;text-wrap:pretty;">Atuação jurídica especializada em Direito Tributário, Empresarial e do Agronegócio, com soluções estratégicas para empresas, empresários e produtores rurais.</p>
+          <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;">
+            <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;text-decoration:none;padding:19px 38px;background:linear-gradient(100deg,#FEEAA4,#AB701C);transition:filter .3s,transform .3s;" style-hover="filter:brightness(1.09);transform:translateY(-2px);">Fale com um especialista</a>
+            <a href="#" onClick="{{ goAreas }}" style="font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#EFE3D6;text-decoration:none;padding:19px 38px;border:1px solid rgba(239,227,214,0.4);transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#FEEAA4;color:#FEEAA4;background:rgba(254,234,164,0.06);">Conheça nossa atuação</a>
+          </div>
+        </div>
+        <div data-reveal="" style="position:relative;">
+          <div style="aspect-ratio: 4/5; width: 100%; border: 1px solid rgba(171,112,28,0.5); overflow: hidden; background: #2C0101; position: relative">
+            
+          <img src="./whatsapp-image-2026-09-11-at-17-03-04-mtxg0s6g-89w2.jpeg" alt="whatsapp-image-2026-09-11-at-17-03-04" width="785" height="1018" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 785px; aspect-ratio: 785 / 1018"></div>
+          <div style="position:absolute;left:-16px;bottom:-16px;width:120px;height:120px;border-left:1px solid #AB701C;border-bottom:1px solid #AB701C;"></div>
+        </div>
+      <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" style="position: fixed; z-index: 70; display: flex; align-items: center; gap: 11px; padding: 15px 22px; background: #370101; border: 1px solid #AB701C; color: #FEEAA4; text-decoration: none; font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 14px 34px rgba(55,1,1,0.3); transition: background .3s,transform .3s; left: 1006px; top: 767px" style-hover="background:#520303;transform:translateY(-2px);">
+    <i style="display:block;width:8px;height:8px;background:#FEEAA4;border-radius:50%;"></i>WhatsApp
+  </a></div>
+    </section>
+
+    <section data-screen-label="Home — Posicionamento" style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,56px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,80px);">
+          <div>
+            <p data-reveal="" style="margin:0;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#AB701C;">Posicionamento</p>
+          </div>
+          <div style="grid-column:span 2;min-width:0;">
+            <h2 data-reveal="" style="margin:0 0 34px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(25px,2.9vw,40px);line-height:1.32;color:#370101;text-wrap:pretty;">O Direito como instrumento estratégico para proteger, estruturar e impulsionar negócios.</h2>
+            <p data-reveal="" style="margin:0 0 20px;font-size:17px;line-height:1.85;font-weight:300;max-width:62ch;text-wrap:pretty;">Nossa atuação vai muito além da resolução de conflitos. Trabalhamos ao lado de quem decide — sócios, gestores e produtores — antecipando riscos, estruturando operações e sustentando escolhas com técnica.</p>
+            <p data-reveal="" style="margin:0;font-size:17px;line-height:1.85;font-weight:300;max-width:62ch;text-wrap:pretty;">Cada solução parte da realidade do negócio: sua operação, seu regime tributário, sua estrutura societária e seus planos de crescimento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" data-screen-label="Home — Áreas de atuação" style="background:#FFFEF8;border-top:1px solid rgba(55,1,1,0.1);">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:clamp(38px,5vw,64px);">
+          <h2 data-reveal="" style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(24px,2.4vw,34px);color:#370101;letter-spacing:0.5px;">Áreas de Atuação</h2>
+          <p data-reveal="" style="margin:0;font-size:11px;letter-spacing:3.4px;text-transform:uppercase;color:#AB701C;">Quatro frentes integradas</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:rgba(55,1,1,0.12);border:1px solid rgba(55,1,1,0.12);">
+          <sc-for list="{{ areas }}" as="a" hint-placeholder-count="3">
+            <a href="#" onClick="{{ a.go }}" data-reveal="" style="display:flex;flex-direction:column;gap:16px;background:#FFFEF8;padding:clamp(30px,3vw,44px);text-decoration:none;color:inherit;transition:background .4s,transform .4s;min-height:330px;" style-hover="background:#FBF6EC;transform:translateY(-3px);">
+              <span style="font-family:Cinzel,Georgia,serif;font-size:13px;letter-spacing:2px;color:#AB701C;">{{ a.num }}</span>
+              <h3 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(20px,1.7vw,25px);line-height:1.3;color:#370101;">{{ a.titulo }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.75;font-weight:300;">{{ a.resumo }}</p>
+              <span style="margin-top:auto;padding-top:22px;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;border-top:1px solid rgba(171,112,28,0.4);">Conheça nossa atuação →</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home — Diferenciais" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px);">
+        <p data-reveal="" style="margin:0 0 clamp(38px,5vw,66px);font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Diferenciais</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));column-gap:clamp(32px,5vw,72px);row-gap:clamp(40px,5vw,66px);">
+          <sc-for list="{{ diferenciais }}" as="d" hint-placeholder-count="4">
+            <div data-reveal="" style="border-top:1px solid rgba(171,112,28,0.55);padding-top:22px;">
+              <span style="display:block;font-family:Cinzel,Georgia,serif;font-size:12px;letter-spacing:2px;color:#C79A4E;margin-bottom:16px;">{{ d.num }}</span>
+              <h3 style="margin:0 0 12px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:20px;line-height:1.35;color:#FFFEF8;">{{ d.titulo }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.8;font-weight:300;color:#DCC9BC;text-wrap:pretty;">{{ d.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home — Para quem atuamos" style="background:#FBF6EC;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);">
+        <h2 data-reveal="" style="margin:0 0 clamp(34px,4vw,56px);font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(24px,2.4vw,34px);color:#370101;">Para quem atuamos</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,3.4vw,48px);">
+          <sc-for list="{{ publicos }}" as="p" hint-placeholder-count="4">
+            <div data-reveal="">
+              <h3 style="margin:0 0 12px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:19px;color:#370101;">{{ p.titulo }}</h3>
+              <div style="width:34px;height:1px;background:#AB701C;margin-bottom:14px;"></div>
+              <p style="margin:0;font-size:15px;line-height:1.78;font-weight:300;text-wrap:pretty;">{{ p.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home — Metodologia" style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,124px) clamp(20px,4vw,56px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);">
+          <div>
+            <p data-reveal="" style="margin:0 0 18px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#AB701C;">Metodologia</p>
+            <h2 data-reveal="" style="margin:0 0 20px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(25px,2.6vw,36px);line-height:1.3;color:#370101;text-wrap:pretty;">Um processo em quatro etapas, do diagnóstico à evolução.</h2>
+            <p data-reveal="" style="margin:0;font-size:16px;line-height:1.8;font-weight:300;max-width:44ch;text-wrap:pretty;">O método garante previsibilidade: você sabe onde está, o que será feito e como o risco será monitorado.</p>
+          </div>
+          <div style="grid-column:span 2;min-width:0;">
+            <sc-for list="{{ etapas }}" as="e" hint-placeholder-count="4">
+              <div data-reveal="" style="display:grid;grid-template-columns:78px 1fr;gap:clamp(16px,2vw,32px);padding:26px 0;border-top:1px solid rgba(55,1,1,0.12);">
+                <span style="font-family:Cinzel,Georgia,serif;font-size:clamp(22px,2vw,30px);color:#AB701C;line-height:1;">{{ e.num }}</span>
+                <div>
+                  <h3 style="margin:0 0 8px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:20px;color:#370101;">{{ e.titulo }}</h3>
+                  <p style="margin:0;font-size:15.5px;line-height:1.78;font-weight:300;max-width:56ch;text-wrap:pretty;">{{ e.texto }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home — Conteúdos" style="background:#FFFEF8;border-top:1px solid rgba(55,1,1,0.1);">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:clamp(34px,4vw,54px);">
+          <h2 data-reveal="" style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(24px,2.4vw,34px);color:#370101;">Conteúdos e Insights</h2>
+          <a href="#" onClick="{{ goConteudos }}" data-reveal="" style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;text-decoration:none;border-bottom:1px solid #AB701C;padding-bottom:4px;">Ver todos</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,2.6vw,36px);">
+          <sc-for list="{{ artigos }}" as="art" hint-placeholder-count="3">
+            <article data-reveal="" style="border:1px solid rgba(55,1,1,0.12);display:flex;flex-direction:column;transition:border-color .4s,transform .4s;" style-hover="border-color:rgba(171,112,28,0.6);transform:translateY(-3px);">
+              <div style="aspect-ratio:16/10;border-bottom:1px solid rgba(55,1,1,0.12);overflow:hidden;background:#FBF6EC;">
+                <img src="{{ art.imagem }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div><div style="padding:26px 26px 30px;display:flex;flex-direction:column;gap:14px;flex:1;">
+                <span style="font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#AB701C;">{{ art.categoria }}</span>
+                <h3 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:19px;line-height:1.4;color:#370101;text-wrap:pretty;">{{ art.titulo }}</h3>
+                <p style="margin:0;font-size:14.5px;line-height:1.75;font-weight:300;">{{ art.resumo }}</p>
+                <div style="margin-top:auto;padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(55,1,1,0.1);">
+                  <span style="font-size:11px;letter-spacing:1.4px;color:#8A7A76;">{{ art.data }}</span>
+                  <a href="#" onClick="{{ goConteudos }}" style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#370101;text-decoration:none;border-bottom:1px solid #AB701C;padding-bottom:3px;">Ler conteúdo</a>
+                </div>
+              </div>
+              
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home — CTA final" style="background:#370101;">
+      <div style="max-width:1000px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px);text-align:center;">
+        <h2 data-reveal="" style="margin:0 0 24px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,44px);line-height:1.25;color:#FFFEF8;text-wrap:pretty;">Decisões estratégicas exigem segurança jurídica.</h2>
+        <p data-reveal="" style="margin:0 auto 44px;font-size:17px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:58ch;text-wrap:pretty;">Conte com uma atuação jurídica preparada para compreender o seu negócio e construir soluções estratégicas para os seus desafios.</p>
+        <a href="#" onClick="{{ goContato }}" data-reveal="" style="display:inline-block;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;text-decoration:none;padding:20px 46px;background:linear-gradient(100deg,#FEEAA4,#AB701C);transition:filter .3s,transform .3s;" style-hover="filter:brightness(1.09);transform:translateY(-2px);">Entre em contato</a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ═══ O ESCRITÓRIO ═══ -->
+  <sc-if value="{{ isEscritorio }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section data-screen-label="Escritório — Hero" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,7vw,104px) clamp(20px,4vw,56px);">
+        <p style="margin:0 0 24px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">O Escritório</p>
+        <h1 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,50px);line-height:1.2;color:#FFFEF8;max-width:22ch;text-wrap:pretty;">Técnica jurídica com leitura de negócios.</h1>
+      </div>
+    </section>
+
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:start;">
+        <div data-reveal="">
+          <div style="aspect-ratio:3/4;background-color:#FBF6EC;background-image:repeating-linear-gradient(135deg,rgba(55,1,1,0.07) 0 1px,transparent 1px 11px);border:1px solid rgba(55,1,1,0.14);display:flex;align-items:flex-end;padding:22px;">
+            <img src="./gemini_generated_image_3w12og3w12og3w12--mtul3cl2-dwhu.jpg" alt="gemini_generated_image_3w12og3w12og3w12-" width="896" height="1200" style="max-width: 100%; height: 422px; display: block; object-fit: cover; width: 284px; aspect-ratio: 896 / 1200">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0;display:flex;flex-direction:column;gap:clamp(34px,4vw,52px);">
+          <div data-reveal="">
+            <h2 style="margin:0 0 16px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);color:#370101;">Quem somos</h2>
+            <p style="margin:0 0 16px;font-size:16.5px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">Thaiza Sales Advocacia e Consultoria é um escritório dedicado a empresas, empresários e produtores rurais. A atuação se concentra em três frentes que se comunicam permanentemente: Direito Tributário, Direito Empresarial e Direito do Agronegócio.</p>
+            <p style="margin:0;font-size:16.5px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">Trabalhamos com um número selecionado de clientes, o que permite conhecer cada operação em profundidade e responder com agilidade.</p>
+          </div>
+          <div data-reveal="">
+            <h2 style="margin:0 0 16px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);color:#370101;">Nossa visão</h2>
+            <p style="margin:0;font-size:16.5px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">O Direito é um instrumento de gestão. Bem aplicado, reduz custo, evita litígio, organiza patrimônio e abre caminho para o crescimento. É esse uso do Direito que orienta nosso trabalho.</p>
+          </div>
+          <div data-reveal="">
+            <h2 style="margin:0 0 16px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);color:#370101;">Nossa atuação</h2>
+            <p style="margin:0;font-size:16.5px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">Consultoria preventiva, planejamento tributário e patrimonial, estruturação societária, contratos e defesa administrativa e judicial. Atendemos empresas em operação e em expansão, famílias empresárias e produtores rurais em todas as etapas do ciclo do negócio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);">
+        <p data-reveal="" style="margin:0 0 clamp(34px,4vw,58px);font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Nossos valores</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));column-gap:clamp(28px,4vw,56px);row-gap:clamp(34px,4vw,52px);">
+          <sc-for list="{{ valores }}" as="v" hint-placeholder-count="6">
+            <div data-reveal="" style="border-top:1px solid rgba(171,112,28,0.55);padding-top:20px;">
+              <h3 style="margin:0 0 10px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:18px;color:#FFFEF8;">{{ v.titulo }}</h3>
+              <p style="margin:0;font-size:14.5px;line-height:1.8;font-weight:300;color:#DCC9BC;text-wrap:pretty;">{{ v.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FBF6EC;">
+      <div style="max-width:1000px;margin:0 auto;padding:clamp(60px,7vw,96px) clamp(20px,4vw,56px);text-align:center;">
+        <h2 data-reveal="" style="margin:0 0 32px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(23px,2.6vw,34px);line-height:1.3;color:#370101;text-wrap:pretty;">Vamos conversar sobre o seu negócio.</h2>
+        <a href="#" onClick="{{ goContato }}" data-reveal="" style="display:inline-block;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#FFFEF8;text-decoration:none;padding:19px 42px;background:#370101;transition:background .3s;" style-hover="background:#520303;">Entre em contato</a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ═══ ÁREAS — VISÃO GERAL ═══ -->
+  <sc-if value="{{ isAreas }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section data-screen-label="Áreas — Hero" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,7vw,104px) clamp(20px,4vw,56px);">
+        <p style="margin:0 0 24px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Áreas de Atuação</p>
+        <h1 style="margin:0 0 22px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,50px);line-height:1.2;color:#FFFEF8;max-width:24ch;text-wrap:pretty;">Quatro especialidades, uma leitura integrada.</h1>
+        <p style="margin:0;font-size:17px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:56ch;text-wrap:pretty;">Tributos, agronegócio, questões cíveis e sucessão raramente aparecem isolados na vida real de um negócio ou de uma família. Tratamos as quatro frentes de forma coordenada.</p>
+      </div>
+    </section>
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:1px;background:rgba(55,1,1,0.0);">
+        <sc-for list="{{ areas }}" as="a" hint-placeholder-count="3">
+          <a href="#" onClick="{{ a.go }}" data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,4vw,56px);padding:clamp(30px,4vw,48px) 0;border-top:1px solid rgba(55,1,1,0.14);text-decoration:none;color:inherit;transition:background .4s;" style-hover="background:#FBF6EC;">
+            <div>
+              <span style="display:block;font-family:Cinzel,Georgia,serif;font-size:13px;letter-spacing:2px;color:#AB701C;margin-bottom:14px;">{{ a.num }}</span>
+              <h2 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);line-height:1.28;color:#370101;">{{ a.titulo }}</h2>
+            </div>
+            <div style="grid-column:span 2;min-width:0;">
+              <p style="margin:0 0 22px;font-size:16.5px;line-height:1.8;font-weight:300;max-width:62ch;text-wrap:pretty;">{{ a.resumo }}</p>
+              <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;border-bottom:1px solid #AB701C;padding-bottom:4px;">Conheça nossa atuação →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ═══ PÁGINA DE ÁREA ═══ -->
+  <sc-if value="{{ isArea }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section data-screen-label="Área — Hero" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,100px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,64px);align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">{{ area.num }} · Área de atuação</p>
+          <h1 style="margin:0 0 22px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(29px,3.4vw,46px);line-height:1.2;color:#FFFEF8;text-wrap:pretty;">{{ area.titulo }}</h1>
+          <p style="margin:0;font-size:17px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:52ch;text-wrap:pretty;">{{ area.hero }}</p>
+        </div>
+        <div style="aspect-ratio:16/11;background-color:#2C0101;background-image:repeating-linear-gradient(135deg,rgba(254,234,164,0.11) 0 1px,transparent 1px 11px);border:1px solid rgba(171,112,28,0.5);display:flex;align-items:flex-end;padding:22px;">
+          <span style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:1.5px;color:#C79A4E;text-transform:uppercase;">{{ area.imagem }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,72px);">
+        <p data-reveal="" style="margin:0;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#AB701C;">A atuação</p>
+        <div style="grid-column:span 2;min-width:0;">
+          <p data-reveal="" style="margin:0 0 18px;font-size:17px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">{{ area.intro1 }}</p>
+          <p data-reveal="" style="margin:0;font-size:17px;line-height:1.85;font-weight:300;max-width:64ch;text-wrap:pretty;">{{ area.intro2 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FBF6EC;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,4vw,56px);">
+        <h2 data-reveal="" style="margin:0 0 clamp(30px,4vw,50px);font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(23px,2.3vw,32px);color:#370101;">Principais serviços</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(55,1,1,0.12);border:1px solid rgba(55,1,1,0.12);">
+          <sc-for list="{{ area.servicos }}" as="s" hint-placeholder-count="6">
+            <div data-reveal="" style="background:#FBF6EC;padding:clamp(24px,2.4vw,34px);display:flex;gap:14px;align-items:flex-start;min-height:118px;">
+              <span style="font-family:Cinzel,Georgia,serif;font-size:12px;color:#AB701C;padding-top:3px;">—</span>
+              <p style="margin:0;font-size:16px;line-height:1.65;color:#370101;">{{ s }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);">
+        <div>
+          <h2 data-reveal="" style="margin:0 0 28px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);color:#370101;">Para quem atuamos</h2>
+          <sc-for list="{{ area.publico }}" as="p" hint-placeholder-count="4">
+            <p data-reveal="" style="margin:0;padding:15px 0;border-top:1px solid rgba(55,1,1,0.12);font-size:16px;line-height:1.6;font-weight:300;">{{ p }}</p>
+          </sc-for>
+        </div>
+        <div>
+          <h2 data-reveal="" style="margin:0 0 28px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);color:#370101;">Diferenciais da atuação</h2>
+          <sc-for list="{{ area.dif }}" as="d" hint-placeholder-count="3">
+            <div data-reveal="" style="padding:18px 0;border-top:1px solid rgba(55,1,1,0.12);">
+              <h3 style="margin:0 0 8px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:17px;color:#370101;">{{ d.titulo }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.75;font-weight:300;text-wrap:pretty;">{{ d.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#370101;">
+      <div style="max-width:1000px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,56px);text-align:center;">
+        <h2 data-reveal="" style="margin:0 0 22px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(24px,2.8vw,38px);line-height:1.26;color:#FFFEF8;text-wrap:pretty;">{{ area.ctaTitulo }}</h2>
+        <p data-reveal="" style="margin:0 auto 40px;font-size:16.5px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:54ch;text-wrap:pretty;">Agende uma conversa inicial para entendermos o cenário e apontarmos os próximos passos.</p>
+        <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" data-reveal="" style="display:inline-block;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;text-decoration:none;padding:20px 44px;background:linear-gradient(100deg,#FEEAA4,#AB701C);transition:filter .3s,transform .3s;" style-hover="filter:brightness(1.09);transform:translateY(-2px);">Converse com nossa equipe</a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ═══ CONTEÚDOS ═══ -->
+  <sc-if value="{{ isConteudos }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section data-screen-label="Conteúdos — Hero" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(60px,7vw,104px) clamp(20px,4vw,56px);">
+        <p style="margin:0 0 24px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Conteúdos e Insights</p>
+        <h1 style="margin:0 0 22px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,50px);line-height:1.2;color:#FFFEF8;max-width:24ch;text-wrap:pretty;">Análises para quem decide.</h1>
+        <p style="margin:0;font-size:17px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:56ch;text-wrap:pretty;">Movimentos legislativos, decisões relevantes e leituras práticas sobre tributos, estrutura empresarial e agronegócio.</p>
+      </div>
+    </section>
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,84px) clamp(20px,4vw,56px);">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(32px,4vw,48px);">
+          <sc-for list="{{ categorias }}" as="c" hint-placeholder-count="4">
+            <button type="button" onClick="{{ c.go }}" style="font-family:Jost,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:12px 22px;cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid rgba(55,1,1,0.2);transition:background .3s,color .3s;">{{ c.nome }}</button>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,2.6vw,36px);">
+          <sc-for list="{{ artigosFiltrados }}" as="art" hint-placeholder-count="3">
+            <article data-reveal="" style="border:1px solid rgba(55,1,1,0.12);display:flex;flex-direction:column;transition:border-color .4s,transform .4s;" style-hover="border-color:rgba(171,112,28,0.6);transform:translateY(-3px);">
+              <div style="aspect-ratio:16/10;border-bottom:1px solid rgba(55,1,1,0.12);overflow:hidden;background:#FBF6EC;">
+                <img src="{{ art.imagem }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <div style="padding:26px 26px 30px;display:flex;flex-direction:column;gap:14px;flex:1;">
+                <span style="font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:#AB701C;">{{ art.categoria }}</span>
+                <h2 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:19px;line-height:1.4;color:#370101;text-wrap:pretty;">{{ art.titulo }}</h2>
+                <p style="margin:0;font-size:14.5px;line-height:1.75;font-weight:300;">{{ art.resumo }}</p>
+                <div style="margin-top:auto;padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(55,1,1,0.1);">
+                  <span style="font-size:11px;letter-spacing:1.4px;color:#8A7A76;">{{ art.data }}</span>
+                  <span style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#370101;border-bottom:1px solid #AB701C;padding-bottom:3px;">Ler conteúdo</span>
+                </div>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ═══ CONTATO ═══ -->
+  <sc-if value="{{ isContato }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section data-screen-label="Contato — Hero" style="background:#370101;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,6vw,90px) clamp(20px,4vw,56px);">
+        <p style="margin:0 0 22px;font-size:11px;letter-spacing:4.2px;text-transform:uppercase;color:#C79A4E;">Contato</p>
+        <h1 style="margin:0;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:clamp(29px,3.4vw,46px);line-height:1.2;color:#FFFEF8;max-width:24ch;text-wrap:pretty;">Conte o seu cenário. Respondemos com um plano.</h1>
+      </div>
+    </section>
+
+    <section style="background:#FFFEF8;">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,80px);align-items:start;">
+        <div style="grid-column:span 2;min-width:0;">
+          <sc-if value="{{ enviado }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #AB701C;padding:clamp(30px,4vw,48px);background:#FBF6EC;">
+              <h2 style="margin:0 0 14px;font-family:Cinzel,Georgia,serif;font-weight:400;font-size:24px;color:#370101;">Mensagem enviada.</h2>
+              <p style="margin:0 0 24px;font-size:16px;line-height:1.8;font-weight:300;">Recebemos o seu contato e responderemos em até um dia útil. Se preferir, fale agora pelo WhatsApp.</p>
+              <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" style="font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#370101;text-decoration:none;border-bottom:1px solid #AB701C;padding-bottom:4px;">Abrir WhatsApp</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ naoEnviado }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" noValidate="{{ true }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(18px,2vw,26px);">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <label for="nome" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">Nome *</label>
+              <input id="nome" name="nome" type="text" value="{{ f.nome }}" onChange="{{ onChange }}" placeholder="Seu nome completo" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid {{ e.nome }};outline:none;">
+              <span style="font-size:12px;color:#9B2C2C;min-height:16px;">{{ msg.nome }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <label for="email" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">E-mail *</label>
+              <input id="email" name="email" type="email" value="{{ f.email }}" onChange="{{ onChange }}" placeholder="nome@empresa.com.br" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid {{ e.email }};outline:none;">
+              <span style="font-size:12px;color:#9B2C2C;min-height:16px;">{{ msg.email }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <label for="telefone" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">Telefone *</label>
+              <input id="telefone" name="telefone" type="tel" value="{{ f.telefone }}" onChange="{{ onChange }}" placeholder="(65) 99999-9999" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid {{ e.telefone }};outline:none;">
+              <span style="font-size:12px;color:#9B2C2C;min-height:16px;">{{ msg.telefone }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <label for="empresa" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">Empresa</label>
+              <input id="empresa" name="empresa" type="text" value="{{ f.empresa }}" onChange="{{ onChange }}" placeholder="Razão social ou nome fantasia" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid rgba(55,1,1,0.22);outline:none;">
+              <span style="font-size:12px;min-height:16px;"></span>
+            </div>
+            <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px;">
+              <label for="interesse" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">Área de interesse *</label>
+              <select id="interesse" name="interesse" value="{{ f.interesse }}" onChange="{{ onChange }}" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid {{ e.interesse }};outline:none;">
+                <option value="">Selecione</option>
+                <option value="Direito Tributário">Direito Tributário</option>
+                <option value="Direito do Agronegócio">Direito do Agronegócio</option>
+                <option value="Direito Civil e Empresarial">Direito Civil e Empresarial</option>
+                <option value="Planejamento Sucessório e Imobiliário">Planejamento Sucessório e Imobiliário</option>
+                <option value="Outro assunto">Outro assunto</option>
+              </select>
+              <span style="font-size:12px;color:#9B2C2C;min-height:16px;">{{ msg.interesse }}</span>
+            </div>
+            <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px;">
+              <label for="mensagem" style="font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8A7A76;">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" rows="6" value="{{ f.mensagem }}" onChange="{{ onChange }}" placeholder="Descreva brevemente o cenário do seu negócio" style="font-family:Jost,sans-serif;font-size:16px;font-weight:300;color:#370101;padding:15px 16px;background:#FFFEF8;border:1px solid {{ e.mensagem }};outline:none;resize:vertical;"></textarea>
+              <span style="font-size:12px;color:#9B2C2C;min-height:16px;">{{ msg.mensagem }}</span>
+            </div>
+            <div style="grid-column:1/-1;">
+              <button type="submit" style="font-family:Jost,sans-serif;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#370101;padding:20px 44px;background:linear-gradient(100deg,#FEEAA4,#AB701C);border:none;cursor:pointer;transition:filter .3s;" style-hover="filter:brightness(1.09);">Enviar mensagem</button>
+            </div>
+          </form>
+          </sc-if>
+        </div>
+        <aside style="display:flex;flex-direction:column;gap:26px;border-top:1px solid rgba(171,112,28,0.5);padding-top:26px;">
+          <div>
+            <p style="margin:0 0 6px;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#AB701C;">WhatsApp</p>
+            <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" style="font-size:17px;color:#370101;text-decoration:none;border-bottom:1px solid rgba(171,112,28,0.5);">(65) 99341-5955</a>
+          </div>
+          <div>
+            <p style="margin:0 0 6px;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#AB701C;">E-mail</p>
+            <a href="mailto:contato@thaizasales.adv.br" style="font-size:17px;color:#370101;text-decoration:none;border-bottom:1px solid rgba(171,112,28,0.5);">advocacia@thaizasales.adv.br</a>
+          </div>
+          <div>
+            <p style="margin:0 0 6px;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#AB701C;">Endereço</p><p style="margin:0;font-size:16px;line-height:1.7;font-weight:300;">R. Mistral, 332 - Despraiado, Cuiabá - MT, 78048-222</p>
+            
+          </div>
+          <div>
+            <p style="margin:0 0 10px;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:#AB701C;">Redes</p>
+            <div style="display:flex;flex-wrap:wrap;gap:16px;">
+              <a href="https://www.instagram.com/adv.thaizasales/" target="_blank" rel="noopener" style="font-size:15px;color:#370101;text-decoration:none;border-bottom:1px solid rgba(171,112,28,0.5);">Instagram</a>
+              <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" style="font-size:15px;color:#370101;text-decoration:none;border-bottom:1px solid rgba(171,112,28,0.5);">LinkedIn</a>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  </main>
+
+  <footer style="background:#370101;border-top:1px solid rgba(171,112,28,0.45);">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(52px,6vw,84px) clamp(20px,4vw,56px) 34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(32px,4vw,56px);">
+      <div>
+        <img src="assets/logo-horizontal.png" alt="Thaiza Sales Advocacia e Consultoria" style="height:38px;width:auto;display:block;margin-bottom:22px;">
+        <p style="margin:0;font-size:14.5px;line-height:1.8;font-weight:300;color:#DCC9BC;max-width:34ch;text-wrap:pretty;">Advocacia e consultoria em Direito Tributário, Empresarial e do Agronegócio para empresas, empresários e produtores rurais.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 18px;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:#C79A4E;">Navegação</p>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="#" onClick="{{ goHome }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Início</a>
+          <a href="#" onClick="{{ goEscritorio }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">O Escritório</a>
+          <a href="#" onClick="{{ goAreas }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Áreas de Atuação</a>
+          <a href="#" onClick="{{ goConteudos }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Conteúdos</a>
+          <a href="#" onClick="{{ goContato }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Contato</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 18px;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:#C79A4E;">Áreas</p>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="#" onClick="{{ goTributario }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Direito Tributário</a>
+          <a href="#" onClick="{{ goAgro }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Direito do Agronegócio</a>
+          <a href="#" onClick="{{ goEmpresarial }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Direito Civil e Empresarial</a>
+          <a href="#" onClick="{{ goSucessorio }}" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Planejamento Sucessório e Imobiliário</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 18px;font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:#C79A4E;">Contato</p>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="https://wa.me/5565993415955" target="_blank" rel="noopener" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">WhatsApp (65) 99341-5955</a>
+          <a href="mailto:contato@thaizasales.adv.br" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">contato@thaizasales.adv.br</a>
+          <a href="https://www.instagram.com/adv.thaizasales/" target="_blank" rel="noopener" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">Instagram</a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" style="font-size:14.5px;font-weight:300;color:#EFE3D6;text-decoration:none;transition:color .3s;" style-hover="color:#FEEAA4;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:0 auto;padding:22px clamp(20px,4vw,56px) 40px;border-top:1px solid rgba(239,227,214,0.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;">
+      <p style="margin:0;font-size:12.5px;font-weight:300;color:#B49C90;">© 2026 Thaiza Sales Advocacia e Consultoria. Todos os direitos reservados.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;">
+        <a href="#" onClick="{{ noop }}" style="font-size:12.5px;font-weight:300;color:#B49C90;text-decoration:none;border-bottom:1px solid rgba(180,156,144,0.4);">Política de Privacidade</a>
+        <span style="font-size:12.5px;font-weight:300;color:#B49C90;">OAB/MT nº [000]</span>
+      </div>
+    </div>
+  </footer>
+
+  
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    page: 'home', menuOpen: false, cat: 'Todos', enviado: false,
+    f: { nome: '', email: '', telefone: '', empresa: '', interesse: '', mensagem: '' },
+    msg: {}
+  };
+
+  go(page) {
+    return (ev) => {
+      if (ev) ev.preventDefault();
+      this.setState({ page: page, menuOpen: false });
+      if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'auto' });
+    };
+  }
+
+  componentDidMount() { this.observe(); this.applyMedia(); }
+  componentDidUpdate(pp, ps) { if (ps.page !== this.state.page) this.observe(); this.applyMedia(); }
+
+  applyMedia() {
+    const wide = window.innerWidth >= 1000;
+    document.querySelectorAll('.navlink').forEach(el => { el.style.display = wide ? 'inline-block' : 'none'; });
+    document.querySelectorAll('.burger').forEach(el => { el.style.display = wide ? 'none' : 'flex'; });
+    if (!this._mq) {
+      this._mq = () => this.applyMedia();
+      window.addEventListener('resize', this._mq);
+    }
+  }
+
+  observe() {
+    if (this._io) this._io.disconnect();
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1)';
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en, i) => {
+        if (en.isIntersecting) {
+          const el = en.target;
+          setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, i * 70);
+          this._io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => this._io.observe(el));
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._mq) window.removeEventListener('resize', this._mq);
+  }
+
+  onChange = (ev) => {
+    const t = ev.target;
+    this.setState(s => ({ f: Object.assign({}, s.f, { [t.name]: t.value }) }));
+  };
+
+  validate() {
+    const f = this.state.f, msg = {};
+    if (!f.nome.trim() || f.nome.trim().length < 3) msg.nome = 'Informe seu nome completo.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) msg.email = 'Informe um e-mail válido.';
+    if (f.telefone.replace(/\D/g, '').length < 10) msg.telefone = 'Informe um telefone com DDD.';
+    if (!f.interesse) msg.interesse = 'Selecione uma área.';
+    if (f.mensagem.trim().length < 15) msg.mensagem = 'Descreva brevemente o seu cenário.';
+    return msg;
+  }
+
+  submit = (ev) => {
+    ev.preventDefault();
+    const msg = this.validate();
+    this.setState({ msg: msg, enviado: Object.keys(msg).length === 0 });
+    if (Object.keys(msg).length) {
+      const first = document.getElementById(Object.keys(msg)[0]);
+      if (first) first.focus();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  };
+
+  areasData() {
+    return {
+      tributario: {
+        num: '01', titulo: 'Direito Tributário',
+        resumo: 'Planejamento e consultoria tributária, recuperação de créditos, defesa administrativa e judicial e gestão de riscos fiscais.',
+        imagem: 'imagem · centro empresarial / dados',
+        hero: 'Carga tributária é decisão de gestão. Estruturamos a operação para que o imposto pago seja o devido — nem mais, nem menos.',
+        intro1: 'Atuamos na revisão do regime tributário, na análise de operações e na identificação de créditos não aproveitados, sempre a partir dos números reais da empresa.',
+        intro2: 'Quando o contencioso é inevitável, a defesa é construída sobre a mesma base técnica que orienta a consultoria: documentação, jurisprudência e leitura do impacto financeiro de cada cenário.',
+        servicos: ['Planejamento tributário', 'Consultoria tributária', 'Recuperação de créditos', 'Defesa administrativa', 'Defesa judicial', 'Gestão de riscos fiscais'],
+        publico: ['Empresas de todos os portes em busca de eficiência fiscal', 'Grupos econômicos com operações em mais de um estado', 'Produtores rurais pessoa física e jurídica', 'Empresas autuadas ou em discussão administrativa'],
+        dif: [
+          { titulo: 'Análise a partir dos números', texto: 'A recomendação nasce do exame de notas, apurações e contratos, não de teses genéricas.' },
+          { titulo: 'Risco declarado', texto: 'Cada alternativa vem com o grau de risco e o cenário de contingência explicitados.' },
+          { titulo: 'Integração contábil', texto: 'Trabalhamos junto à contabilidade do cliente para que a tese se sustente na escrituração.' }
+        ],
+        ctaTitulo: 'Sua estrutura tributária está trabalhando a favor do negócio?'
+      },
+      empresarial: {
+        num: '03', titulo: 'Direito Civil e Empresarial',
+        resumo: 'Contratos, questões societárias, responsabilidade civil, direito de família e sucessões, consumidor e atuação em demandas judiciais e extrajudiciais.',
+        imagem: 'imagem · reunião societária / infraestrutura',
+        hero: 'A vida civil e empresarial produz questões que não cabem em uma única especialidade. Atendemos a essa amplitude.',
+        intro1: 'Atuamos em contratos de toda natureza, estruturação de sociedades, responsabilidade civil, cobranças, direito de família e sucessões, relações de consumo e demandas judiciais em geral.',
+        intro2: 'A leitura é sempre a mesma: entender o cenário completo do cliente, indicar o caminho com menor exposição e conduzir a solução, seja pela negociação ou pelo processo.',
+        servicos: ['Contratos em geral', 'Estruturação societária', 'Responsabilidade civil e cobranças', 'Família e sucessões', 'Relações de consumo', 'Demandas judiciais e extrajudiciais'],
+        publico: ['Empresas em fase de expansão ou reorganização', 'Sócios e famílias empresárias', 'Pessoas físicas com questões patrimoniais e familiares', 'Clientes em negociação ou litígio'],
+        dif: [
+          { titulo: 'Amplitude de atuação', texto: 'Um único interlocutor para as diferentes frentes jurídicas do cliente.' },
+          { titulo: 'Prevenção antes do conflito', texto: 'Mapeamos os pontos de atrito contratual e familiar antes que virem disputa.' },
+          { titulo: 'Suporte contínuo', texto: 'Acompanhamento recorrente, com interlocução direta e prazos combinados.' }
+        ],
+        ctaTitulo: 'Tem uma questão jurídica que não se encaixa em uma única área?'
+      },
+      sucessorio: {
+        num: '04', titulo: 'Planejamento Sucessório e Imobiliário',
+        resumo: 'Planejamento sucessório, inventário judicial e extrajudicial, holding familiar e regularização de imóveis urbanos e rurais.',
+        imagem: 'imagem · família / propriedade / documentos',
+        hero: 'Patrimônio construído ao longo de uma vida precisa de organização para atravessar gerações sem conflito e sem custo desnecessário.',
+        intro1: 'Estruturamos a sucessão com antecedência — doações, holding familiar, testamento e acordos entre herdeiros — reduzindo carga tributária, prazos e riscos de disputa.',
+        intro2: 'Quando a sucessão já se abriu, conduzimos o inventário pela via mais rápida possível e regularizamos os imóveis envolvidos: matrícula, registro, usucapião e georreferenciamento.',
+        servicos: ['Planejamento sucessório', 'Holding familiar e patrimonial', 'Inventário judicial e extrajudicial', 'Testamentos e doações', 'Regularização de imóveis urbanos e rurais', 'Usucapião e georreferenciamento'],
+        publico: ['Famílias que desejam organizar a sucessão em vida', 'Herdeiros com inventário a abrir ou em andamento', 'Produtores rurais com terras a regularizar', 'Proprietários com imóveis sem registro ou com pendências'],
+        dif: [
+          { titulo: 'Visão tributária da sucessão', texto: 'ITCMD, ganho de capital e imposto de renda analisados antes de cada decisão.' },
+          { titulo: 'Menor tempo possível', texto: 'Prioridade à via extrajudicial sempre que a situação permitir.' },
+          { titulo: 'Imóvel regular, patrimônio seguro', texto: 'Documentação em ordem para vender, financiar, dar em garantia ou transmitir.' }
+        ],
+        ctaTitulo: 'O seu patrimônio está preparado para a próxima geração?'
+      },
+      agro: {
+        num: '02', titulo: 'Direito do Agronegócio',
+        resumo: 'Consultoria para produtores rurais, contratos agrários, planejamento patrimonial e segurança jurídica para operações rurais.',
+        imagem: 'imagem · lavoura / maquinário / armazém',
+        hero: 'O agronegócio opera com ciclos longos, capital intensivo e risco climático. O jurídico precisa acompanhar esse ritmo.',
+        intro1: 'Atuamos em contratos de arrendamento, parceria, barter, compra e venda de safra e financiamento, com atenção às garantias reais e à cadeia de responsabilidade.',
+        intro2: 'Também estruturamos o patrimônio rural e familiar, integrando o planejamento sucessório às questões tributárias específicas do setor.',
+        servicos: ['Consultoria para produtores rurais', 'Contratos agrários', 'Planejamento patrimonial', 'Questões tributárias do setor', 'Estruturação jurídica', 'Segurança jurídica para operações rurais'],
+        publico: ['Produtores rurais pessoa física e jurídica', 'Grupos e famílias produtoras', 'Empresas de insumos, armazenagem e trading', 'Operações com crédito rural e barter'],
+        dif: [
+          { titulo: 'Conhecimento do ciclo', texto: 'Prazos e garantias pensados a partir do calendário de safra e do fluxo de caixa real.' },
+          { titulo: 'Patrimônio e operação juntos', texto: 'A estrutura societária, a terra e a produção tratados como um só desenho.' },
+          { titulo: 'Especificidade tributária', texto: 'Funrural, ITR, créditos e regimes próprios do setor analisados caso a caso.' }
+        ],
+        ctaTitulo: 'Sua operação rural tem segurança jurídica em cada contrato?'
+      }
+    };
+  }
+
+  renderVals() {
+    const p = this.state.page, A = this.areasData();
+    const areaKeys = ['tributario', 'agro', 'empresarial', 'sucessorio'];
+    const areas = areaKeys.map(k => ({
+      num: A[k].num, titulo: A[k].titulo, resumo: A[k].resumo, go: this.go(k)
+    }));
+
+    const artigos = [
+      { categoria: 'Tributário', titulo: 'Créditos não aproveitados: onde as empresas costumam deixar dinheiro parado', resumo: 'Um roteiro prático de revisão de apurações dos últimos cinco anos e o que costuma aparecer nela.', data: '28 de agosto de 2026', imagem: 'assets/artigo-tributario.png' },
+      { categoria: 'Cível e Empresarial', titulo: 'Acordo de sócios: as cinco cláusulas que evitam a maioria dos conflitos', resumo: 'Saída, entrada de investidor, deadlock, distribuição e sucessão — o que precisa estar escrito antes.', data: '14 de agosto de 2026', imagem: 'assets/artigo-civel.png' },
+      { categoria: 'Agronegócio', titulo: 'Barter e garantias: o que revisar antes de fechar a próxima safra', resumo: 'Como estruturar a troca de insumos por produção sem comprometer o patrimônio da fazenda.', data: '02 de agosto de 2026', imagem: 'assets/artigo-agro.png' }
+    ];
+
+    const cats = ['Todos', 'Tributário', 'Agronegócio', 'Cível e Empresarial'];
+    const categorias = cats.map(c => ({
+      nome: c,
+      bg: this.state.cat === c ? '#370101' : 'transparent',
+      fg: this.state.cat === c ? '#FFFEF8' : '#370101',
+      go: () => this.setState({ cat: c })
+    }));
+
+    const e = {}, msg = this.state.msg;
+    ['nome', 'email', 'telefone', 'interesse', 'mensagem'].forEach(k => {
+      e[k] = msg[k] ? '#9B2C2C' : 'rgba(55,1,1,0.22)';
+    });
+
+    return {
+      isHome: p === 'home',
+      isEscritorio: p === 'escritorio',
+      isAreas: p === 'areas',
+      isArea: areaKeys.indexOf(p) > -1,
+      isConteudos: p === 'conteudos',
+      isContato: p === 'contato',
+      area: A[p] || A.tributario,
+      areas: areas,
+      artigos: artigos,
+      artigosFiltrados: this.state.cat === 'Todos' ? artigos : artigos.filter(a => a.categoria === this.state.cat),
+      categorias: categorias,
+      diferenciais: [
+        { num: '01', titulo: 'Atuação estratégica', texto: 'Soluções jurídicas construídas a partir da realidade de cada negócio.' },
+        { num: '02', titulo: 'Visão multidisciplinar', texto: 'Integração entre Direito Tributário, Empresarial e Agronegócio.' },
+        { num: '03', titulo: 'Atendimento personalizado', texto: 'Proximidade e compreensão profunda das necessidades de cada cliente.' },
+        { num: '04', titulo: 'Segurança jurídica', texto: 'Prevenção de riscos e construção de decisões juridicamente seguras.' }
+      ],
+      publicos: [
+        { titulo: 'Empresas', texto: 'Suporte jurídico recorrente em tributos, contratos e estrutura societária.' },
+        { titulo: 'Pessoas Físicas', texto: 'Tributação pessoal, proteção patrimonial, sucessão e relação entre sócios.' },
+        { titulo: 'Produtores Rurais', texto: 'Contratos agrários, regime tributário do campo e segurança da operação.' },
+        { titulo: 'Negócios do Agronegócio', texto: 'Insumos, armazenagem, trading e financiamento da produção.' }
+      ],
+      etapas: [
+        { num: '01', titulo: 'Diagnóstico', texto: 'Compreensão aprofundada do cenário jurídico e empresarial.' },
+        { num: '02', titulo: 'Estratégia', texto: 'Construção da solução jurídica adequada aos objetivos do cliente.' },
+        { num: '03', titulo: 'Implementação', texto: 'Execução técnica e acompanhamento das medidas necessárias.' },
+        { num: '04', titulo: 'Segurança e Evolução', texto: 'Monitoramento contínuo e prevenção de novos riscos.' }
+      ],
+      valores: [
+        { titulo: 'Excelência técnica', texto: 'Fundamento, pesquisa e atualização constante em cada parecer.' },
+        { titulo: 'Proximidade', texto: 'Interlocução direta com quem decide, sem intermediários.' },
+        { titulo: 'Estratégia', texto: 'Recomendação orientada ao objetivo do negócio, não ao procedimento.' },
+        { titulo: 'Ética', texto: 'Transparência sobre riscos, prazos e limites de cada alternativa.' },
+        { titulo: 'Confiança', texto: 'Relação de longo prazo, construída caso a caso.' },
+        { titulo: 'Visão de negócios', texto: 'Leitura de operação, mercado e patrimônio antes da tese jurídica.' }
+      ],
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      goHome: this.go('home'),
+      goEscritorio: this.go('escritorio'),
+      goAreas: this.go('areas'),
+      goConteudos: this.go('conteudos'),
+      goContato: this.go('contato'),
+      goTributario: this.go('tributario'),
+      goEmpresarial: this.go('empresarial'),
+      goAgro: this.go('agro'),
+      goSucessorio: this.go('sucessorio'),
+      noop: (ev) => ev.preventDefault(),
+      f: this.state.f,
+      msg: Object.assign({ nome: '', email: '', telefone: '', interesse: '', mensagem: '' }, msg),
+      e: e,
+      onChange: this.onChange,
+      submit: this.submit,
+      enviado: this.state.enviado,
+      naoEnviado: !this.state.enviado
+    };
+  }
+}
+
+</script>
+</body>
+</html>
